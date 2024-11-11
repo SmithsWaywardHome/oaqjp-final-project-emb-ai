@@ -11,5 +11,9 @@ def emotion_detector(text_to_analyze):
     # Headers for Emotion Predict API
     header = {"grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"}
     
-    # Response
-    response = requests.post(url)
+    # POST request and capture response
+    response = requests.post(url, json=myobj, headers-header)
+
+    # Parse the response from the API
+    formatted_response = json.loads(response.text)
+    
