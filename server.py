@@ -26,7 +26,7 @@ def sent_emotion():
 
     # Check for null response, indicating an error or invalid input
     if response['dominant_emotion'] is None:
-        return "Invalid input! Try again."
+        return "Invalid input! Please try again!"
 
     # Otherwise format and return an output string
     dominant_emotion = response['dominant_emotion']
