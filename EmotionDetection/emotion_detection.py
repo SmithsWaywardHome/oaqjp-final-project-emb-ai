@@ -29,8 +29,15 @@ def emotion_detector(text_to_analyze):
         formatted_response = { key:scores[key] for key in scores}
         formatted_response['dominant_emotion'] = dominant_emotion
     
-    # If the response status code is 500, set label and score to None
-    elif response.status_code == 500:
-        formatted_response = None
+    # If the response status code is 400, set all response values to None
+    elif response.status_code == 400:
+        formatted_response = {
+            'anger': None,
+            'disgust': None,
+            'fear': None,
+            'joy': None,
+            'sadness': None,
+            'dominant_emotion': None
+        }
     
     return formatted_response

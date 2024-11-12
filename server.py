@@ -25,7 +25,7 @@ def sent_emotion():
     response = emotion_detector(text_to_analyze)
 
     # Check for null response, indicating an error or invalid input
-    if response is None:
+    if response['dominant_emotion'] is None:
         return "Invalid input! Try again."
 
     # Otherwise format and return an output string
